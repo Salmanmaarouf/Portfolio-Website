@@ -1,17 +1,17 @@
 
-Welcome to my personal portfolio website! This is a modern, minimalistic, and fully responsive website showcasing my work, projects, and background.
+Welcome to my personal portfolio website!
+This is a modern, minimalistic, and fully responsive website showcasing my work, projects, and background.
 
-Live Demo:
-👉 https://yourcustomdomain.com/
+Check it out at https://yourcustomdomain.com/
 
-Features:
-Minimal & Elegant Design – Clean layout for an engaging user experience.  
-Smooth Page Transitions – Animations for a dynamic feel.  
-Responsive Design – Works on all devices (desktop, tablet, mobile).  
-Custom Contact Form – Users can send messages directly.  
-Interactive Buttons & Effects – Engaging UI for better interaction.  
+Features
+- Minimal & Elegant Design
+- Smooth Page Transitions
+- Responsive Design
+- Custom Contact Form
+- Interactive Buttons & Effects
 
-Technologies Used:
+Technologies Used
 - frontend: HTML, CSS, JavaScript  
 - Backend: Node.js, Express, Nodemailer (for Contact Form)  
 - Hosting: Vercel / GitHub Pages  
