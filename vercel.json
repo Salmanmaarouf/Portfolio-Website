@@ -1,15 +1,9 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/index.html" }
-    ],
-    "cleanUrls": true,
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          { "key": "Cache-Control", "value": "no-store" }
-        ]
-      }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    { "src": "server/server.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/server/server.js" }
+  ]
+}
