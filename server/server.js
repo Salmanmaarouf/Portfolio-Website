@@ -1,4 +1,3 @@
-// this file is my backend server that listens for contact form submissions
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
@@ -9,10 +8,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Serve static files from the public directory
-app.use(express.static(path.join(__dirname, "../public")));
+// Serve static files from the root directory
+app.use(express.static(path.join(__dirname, '..')));
 
-// Route for handling the contact form submission
 app.post("/send", async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -40,9 +38,9 @@ app.post("/send", async (req, res) => {
   }
 });
 
-// For any other routes, serve the index.html file (for client-side routing)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
+// For any routes not found, serve index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
