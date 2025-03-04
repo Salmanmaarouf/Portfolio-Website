@@ -8,9 +8,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Serve static files from the root directory
+// Important: Serve static files from the root directory
+// This ensures CSS, JS, and image files are properly loaded
 app.use(express.static(path.join(__dirname, '..')));
 
+// Handle the contact form submission
 app.post("/send", async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -38,7 +40,24 @@ app.post("/send", async (req, res) => {
   }
 });
 
-// For any routes not found, serve index.html
+// Define specific routes for your HTML pages
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../index.html'));
+});
+
+app.get('/about.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../about.html'));
+});
+
+app.get('/contact.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../contact.html'));
+});
+
+app.get('/projects.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../projects.html'));
+});
+
+// For any other routes, serve index.html as fallback
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'));
 });
