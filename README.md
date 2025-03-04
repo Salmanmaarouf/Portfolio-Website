@@ -2,7 +2,7 @@
 Welcome to my personal portfolio website!
 This is a modern, minimalistic, and fully responsive website showcasing my work, projects, and background.
 
-Check it out at https://yourcustomdomain.com/
+Check it out at https://portfolio-website-pearl-xi-86.vercel.app/
 
 Features
 - Minimal & Elegant Design
