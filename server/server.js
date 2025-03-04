@@ -9,8 +9,8 @@ app.use(express.json());
 app.use(cors());
 
 // Important: Serve static files from the root directory
-// This ensures CSS, JS, and image files are properly loaded
-app.use(express.static(path.join(__dirname, '..')));
+app.use(express.static(path.join(__dirname, '../public')));
+
 
 // Handle the contact form submission
 app.post("/send", async (req, res) => {
