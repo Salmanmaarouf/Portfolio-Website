@@ -265,3 +265,92 @@ textarea {
         transform: translateX(0);
     }
 }
+
+
+/*  Mobile Styles - Applying for screens smaller than 768px */
+@media (max-width: 768px) {
+    
+    /* Stack everything vertically */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Make the center column full width */
+    .center-column {
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Make the right column full width */
+    .right-column {
+        width: 100%;
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    /* Ensure images fit within the screen */
+    .main-image {
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        margin-left: 0;
+    }
+
+    /* Adjust typography for readability */
+    h1 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Adjust navigation buttons */
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-button, .back-button {
+        width: 100%;
+        padding: 0.6rem;
+        font-size: 1rem;
+    }
+
+    /* Adjust social icons */
+    .social-links {
+        justify-content: center;
+    }
+
+    .iconlinkedin, .icongithub {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Contact form improvements */
+    form {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    input, textarea {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    /* Improve button touch areas */
+    .submit-button {
+        width: 100%;
+        padding: 0.8rem;
+    }
+}
