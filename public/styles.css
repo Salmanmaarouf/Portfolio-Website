@@ -354,3 +354,44 @@ textarea {
         padding: 0.8rem;
     }
 }
+
+/* 📝 Blog & Commentaries Page */
+.blog-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.blog-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.blog-list a:hover {
+    color: #EBB866;
+}
+
+/* 🖼 Blog Thumbnails */
+.blog-thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: transform 0.2s ease-in-out;
+}
+
+.blog-list a:hover .blog-thumbnail {
+    transform: scale(1.05);
+}

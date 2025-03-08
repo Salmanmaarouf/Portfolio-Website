@@ -3,18 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Blogs & Commentaries</title>
+    <link rel="stylesheet" href="/styles.css">  <!-- Main website styles -->
 </head>
 <body>
-    <header>
-        <h1>Blog Posts and commentaries</h1>
-    </header>
-    <main>
-        <ul>
-            <li><a href="public/blogs/blog1.html">How Data is Transforming Football and Boosting Club Profits
-            </a></li>
-        </ul>
-    </main>
+    <div class="container">
+        <div class="left-column"></div>
+        
+        <div class="center-column">
+            <!-- Main image for the blog page -->
+            <img src="public/images/blogs_and_commentaries.webp" alt="Blogs & Commentaries" class="main-image">
+        </div>
+
+        <div class="right-column">
+            <div class="back-button-container">
+                <a href="index.html" class="back-button">
+                    <span class="back-arrow">←</span> Back to Home
+                </a>
+            </div>
+            
+            <div class="page-header">
+                <h1>BLOGS & COMMENTARIES</h1>
+                <div class="underline"></div>
+            </div>
+
+            <div class="content">
+                <h2>Latest Articles</h2>
+                <ul class="blog-list">
+                    <!-- Blog 1 -->
+                    <li>
+                        <a href="/blogs/blog1.html">
+                            <img src="/images/blog1_thumbnail.webp" class="blog-thumbnail" alt="Football Data">
+                            <span>How Data is Transforming Football and Boosting Club Profits</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
