@@ -354,44 +354,57 @@ textarea {
         padding: 0.8rem;
     }
 }
+    /*Blog & Commentaries Page - Square Article Boxes */
+    .blog-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        padding: 0;
+        justify-content: center;
+    }
 
-/* 📝 Blog & Commentaries Page */
-.blog-list {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
-}
+    .blog-list li {
+        list-style: none;
+        width: 250px;  /* Square dimensions */
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background: #f4f4f4;  /* Light background */
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        transition: transform 0.2s ease-in-out, background 0.3s ease;
+        text-align: center;
+    }
 
-.blog-list li {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
+    .blog-list a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.blog-list a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-    font-size: 1.2rem;
-    transition: color 0.2s ease-in-out;
-}
+    /* 🖼 Background Image for Each Box */
+    .blog-list li:nth-child(1) {
+        background: url("/images/blog1_thumbnail.webp") center/cover no-repeat;
 
-.blog-list a:hover {
-    color: #EBB866;
-}
 
-/* 🖼 Blog Thumbnails */
-.blog-thumbnail {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    transition: transform 0.2s ease-in-out;
-}
+    /* Hover Effect */
+    .blog-list li:hover {
+        transform: scale(1.05);
+        background: rgba(0, 0, 0, 0.8);  /* Darkens on hover */
+    }
 
-.blog-list a:hover .blog-thumbnail {
-    transform: scale(1.05);
+    .blog-list li:hover a {
+        color: #EBB866;
+    }
 }
