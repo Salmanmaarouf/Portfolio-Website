@@ -8,11 +8,37 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Important: Serve static files from the root directory
-app.use(express.static(path.join(__dirname, '../public')));
+// ✅ Serve static files from 'public' and root directory
+app.use(express.static(path.join(__dirname, "../public")));  
+app.use(express.static(path.join(__dirname, ".."))); 
 
+// ✅ Serve specific HTML pages correctly
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../index.html"));
+});
 
-// Handle the contact form submission
+app.get("/about.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "../about.html"));
+});
+
+app.get("/contact.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "../contact.html"));
+});
+
+app.get("/projects.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "../projects.html"));
+});
+
+app.get("/blogs_and_commentaries.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "../blogs_and_commentaries.html"));
+});
+
+// ✅ Serve individual blog posts correctly
+app.get("/blogs/:blogName", (req, res) => {
+  res.sendFile(path.join(__dirname, `../blogs/${req.params.blogName}`));
+});
+
+// ✅ Contact form submission handler
 app.post("/send", async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -40,27 +66,20 @@ app.post("/send", async (req, res) => {
   }
 });
 
-// Define specific routes for your HTML pages
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../index.html'));
+// ✅ Serve static assets (JS, CSS, images) properly
+app.get("/script.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "../script.js"));
 });
 
-app.get('/about.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../about.html'));
+app.get("/styles.css", (req, res) => {
+  res.sendFile(path.join(__dirname, "../styles.css"));
 });
 
-app.get('/contact.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../contact.html'));
+// ✅ Handle 404 Errors (if a file doesn't exist)
+app.use((req, res) => {
+  res.status(404).send("Page Not Found");
 });
 
-app.get('/projects.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../projects.html'));
-});
-
-// For any other routes, serve index.html as fallback
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../index.html'));
-});
-
+// ✅ Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
