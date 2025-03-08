@@ -395,7 +395,7 @@ textarea {
 
     /* 🖼 Background Image for Each Box */
     .blog-list li:nth-child(1) {
-        background: url("/images/blog1_thumbnail.webp") center/cover no-repeat;
+        background: url("/public/images/soccer1.webp") center/cover no-repeat;
 
 
     /* Hover Effect */
