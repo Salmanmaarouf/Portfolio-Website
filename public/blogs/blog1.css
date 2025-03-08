@@ -1,47 +1,67 @@
-/* 📝 Blog 1: Football Data */
-.article-header {
-    text-align: center;
+/* 📝 Minimalist Blog Styling */
+body {
+    background: #fff;
     color: #222;
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.article {
+    line-height: 1.8;
+}
+
+.article-title {
+    text-align: center;
+    font-size: 2rem;
     font-weight: bold;
+    color: black;
 }
 
 .article-meta {
-    font-size: 0.9rem;
-    color: #666;
     text-align: center;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: gray;
+    margin-bottom: 2rem;
 }
 
-.article-content {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    padding: 2rem;
-    background: #f8f8f8;
-    border-radius: 10px;
-}
-
-.article-content blockquote {
-    font-style: italic;
-    padding: 1.2rem;
-    border-left: 4px solid #EBB866;
-    background: #f3f3f3;
-    margin: 1.5rem 0;
+h2 {
+    font-size: 1.5rem;
     font-weight: bold;
+    color: black;
+    margin-top: 2rem;
 }
 
-.article-content p {
+p {
+    font-size: 1.2rem;
     text-align: justify;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 
-.transfer-list {
-    margin: 1.5rem 0;
+ul.transfer-list {
     padding-left: 20px;
 }
 
-.transfer-list li {
-    font-size: 1.1rem;
+ul.transfer-list li {
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
+}
+
+blockquote.highlight {
+    font-style: italic;
+    padding: 1.2rem;
+    border-left: 4px solid gold;
+    background: #faf3d5;
+    margin: 2rem 0;
+    font-weight: bold;
 }
 
 .article-footer {
@@ -61,9 +81,21 @@
 
 .source-list a {
     text-decoration: none;
-    color: #0077cc;
+    color: gold;
 }
 
 .source-list a:hover {
+    text-decoration: underline;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: gold;
+    text-decoration: none;
+}
+
+.back-button:hover {
     text-decoration: underline;
 }
