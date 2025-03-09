@@ -364,34 +364,31 @@ textarea {
     }
 
     .blog-list li {
-        list-style: none;
-        width: 250px;  /* Square dimensions */
-        height: 250px;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
-        background: #f4f4f4;  /* Light background */
-        border-radius: 10px;
-        border: 1px solid #ddd;
-        transition: transform 0.2s ease-in-out, background 0.3s ease;
-        text-align: center;
+        width: 100%;
+        height: 100px;  /* Adjust the height as needed */
+        background: white;  /* Plain white background */
+        border: 2px solid gold;  /* Gold border */
+        cursor: pointer;
+        transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
     }
 
-    .blog-list a {
+    .blog-list li a {
         text-decoration: none;
-        color: #333;
+        color: black;
         font-size: 1.2rem;
         font-weight: bold;
         text-align: center;
-        display: block;
         width: 100%;
         height: 100%;
-        padding: 1rem;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: color 0.2s ease-in-out;
     }
+    
 
     /* 🖼 Background Image for Each Box */
     .blog-list li:nth-child(1) {
@@ -399,10 +396,10 @@ textarea {
 
 
     /* Hover Effect */
-    .blog-list li:hover {
-        transform: scale(1.05);
-        background: rgba(0, 0, 0, 0.8);  /* Darkens on hover */
+    .blog-list li:hover a {
+        color: white;  /* Change text color on hover */
     }
+    
 
     .blog-list li:hover a {
         color: #EBB866;
