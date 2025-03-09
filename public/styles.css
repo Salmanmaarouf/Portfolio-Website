@@ -363,45 +363,43 @@ textarea {
         justify-content: center;
     }
 
-    .blog-list li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100px;  /* Adjust the height as needed */
-        background: white;  /* Plain white background */
-        border: 2px solid gold;  /* Gold border */
-        cursor: pointer;
-        transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
-    }
-
-    .blog-list li a {
-        text-decoration: none;
-        color: black;
-        font-size: 1.2rem;
-        font-weight: bold;
-        text-align: center;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: color 0.2s ease-in-out;
-    }
-    
-
-    /* 🖼 Background Image for Each Box */
-    .blog-list li:nth-child(1) {
-        background: white;
-
-
-    /* Hover Effect */
-    .blog-list li:hover a {
-        color: white;  /* Change text color on hover */
-    }
-    
-
-    .blog-list li:hover a {
-        color: #EBB866;
-    }
+/* 📝 Style for Article Button (Matches Back Button & Navigation) */
+.blog-list li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;  /* Matches other buttons */
+    background: white;
+    border: 2px solid gold;
+    text-align: center;
+    transition: background 0.3s ease-in-out, transform 0.1s ease-in-out;
 }
+
+/* Styling the text inside the button */
+.blog-list li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease-in-out;
+}
+
+
+/* 🔥 Hover Effect (Gold Background & White Text) */
+.blog-list li:hover {
+    background: gold;
+    transform: scale(1.05);
+}
+
+.blog-list li:hover a {
+    color: white;
+}
+
