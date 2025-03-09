@@ -380,16 +380,36 @@ textarea {
 }
 
 /* Styling the text inside the button */
+/* 📝 Article Button Styling (Matches Back Button & Homepage Buttons) */
+.blog-list li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;  /* Matches other buttons */
+    background: white;
+    border: 2px solid gold;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensures ripple stays within the button */
+    transition: background 0.3s ease-in-out, transform 0.1s ease-in-out;
+}
+
+/* Styling the text inside the button */
 .blog-list li a {
     text-decoration: none;
     color: black;
     font-size: 1.2rem;
     font-weight: bold;
+    display: block;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    z-index: 1;
     transition: color 0.3s ease-in-out;
 }
 
@@ -403,23 +423,22 @@ textarea {
     color: white;
 }
 
-/* 🌊 Ripple Effect */
-.ripple {
+/* Ripple Effect */
+.blog-list li::before {
+    content: "";
     position: absolute;
-    background: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 215, 0, 0.4); /* Light Gold */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
     border-radius: 50%;
-    transform: scale(0);
-    animation: ripple-animation 0.6s linear;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
-/* 🔄 Ripple Animation */
-@keyframes ripple-animation {
-    from {
-        transform: scale(0);
-        opacity: 1;
-    }
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
+.blog-list li:active::before {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 1;
 }
