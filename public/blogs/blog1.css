@@ -16,8 +16,10 @@ body {
 }
 
 .article {
-    line-height: 1.8;
+    line-height: 1.6; /* Adjust to make it more readable */
+    word-spacing: 0px; /* Ensures consistent word spacing */
 }
+
 
 .article-title {
     text-align: center;
@@ -25,6 +27,11 @@ body {
     font-weight: bold;
     color: black;
 }
+.article p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
 
 .article-meta {
     text-align: center;
@@ -44,7 +51,10 @@ p {
     font-size: 1.2rem;
     text-align: justify;
     margin-bottom: 1.5rem;
+    word-spacing: normal;  /* Prevents excessive spaces between words */
+    white-space: normal;  /* Ensures text flows naturally */
 }
+
 
 ul.transfer-list {
     padding-left: 20px;
@@ -98,4 +108,17 @@ blockquote.highlight {
 
 .back-button:hover {
     text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    p {
+        font-size: 1rem;  /* Slightly smaller text for better spacing */
+        text-align: left;  /* Left-align text if justification is causing gaps */
+        word-spacing: normal;
+    }
+
+    .article {
+        padding: 1rem;  /* Add more breathing room for smaller screens */
+    }
 }
