@@ -1,0 +1,125 @@
+import React, { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import './BlogPost.css';
+
+const BlogPost = () => {
+  const { blogName } = useParams();
+
+  useEffect(() => {
+    // Apply fade-in effect on page load
+    document.body.classList.add('show');
+  }, []);
+
+  // For now, we'll handle the specific blog post content
+  // In a real application, you might fetch this from an API or CMS
+  const renderBlogContent = () => {
+    if (blogName === 'blog1.html') {
+      return (
+        <div className="article">
+          <Link to="/blogs" className="back-button">← Back to Blogs</Link>
+
+          <h1 className="article-title">How Data is Transforming Football and Boosting Club Profits</h1>
+          <p className="article-meta">Published on March 5, 2025</p>
+
+          <p>Data isn't just a tool in modern football, it's a revolution. Clubs count on analytics to spot talent, 
+          maximise tactics, and even set player contracts. But does this data revolution filter down to revenue? 
+          Let's explore how clubs leverage data to transform the sport.</p>
+
+          <h2>The Rise of Data-Driven Football</h2>
+          <p>Football has moved far beyond raw talent and gut feeling. Now, clubs use advanced analytics to track 
+          player condition, optimise formations, and make data-backed transfer decisions. Metrics like Expected Goals (xG) 
+          and heatmaps are now central for coaches, analysts, and even fans.</p>
+
+          <h2>Brighton & Hove Albion: The Premier League's Smartest Spenders</h2>
+          <p>Brighton has been quietly emerging as one of the Premier League's most effective clubs. By using data to discover hidden gems and flogging players for huge returns. 
+              Owner Tony Bloom is a gambler with a background in data analysis, who has transferred his expertise to football, and Brighton is now a scouting power to be respected.
+          </p>
+
+          <p>
+              How do they do it? Prioritising analytics over traditional scouting. The proof is in the pudding:
+          </p>
+
+          <ul className="transfer-list">
+              <li>Moises Caicedo – Signed for £4M, sold for £115M.</li>
+              <li>Marc Cucurella – Signed for £15M, sold for £52.5M.</li>
+              <li>Alexis Mac Allister – Bought at a low fee, sold for a major profit.</li>
+          </ul>
+
+          <p>Thanks to its data-driven recruitment policy, Brighton continues to punch above its weight on the pitch and in the transfer market.</p>
+
+          <h2>Benfica: Europe's Ultimate Talent Factory</h2>
+          <p>La Masia is Barcelona's dream school, but player production is no stranger to Benfica. 
+              The Portuguese champions have mastered the player development and marketing game with their international academies that identify potential and work it up. 
+              Which is then followed by fine-tuning on their high-tech training ground.
+          </p>
+          <p>
+              While clubs build teams around graduates of their academies, Benfica operates with a determined purpose: construct, sell, repeat. 
+              The strategy has brought enormous transfer fee windfalls from players like João Félix, Rúben Dias, and Gonçalo Ramos. While fans complain about routine departures, the Benfica model ensures financial stability and long-term growth.
+          </p>
+
+          <h2>Brentford: The Small Club Winning with Big Data</h2>
+          <p>Brentford has turned data analysis into an art form. With far fewer funds than their Premier League rivals, the West London club employs sharp scouting and forecasting analytics to uncover gems. 
+              This diligent approach served them well in working their way up the divisions and becoming a respectable force in the Premier League. 
+          </p>
+
+          <h2>TSG Hoffenheim: Bundesliga's Data-Driven Pioneers</h2>
+          <p>A club that previously belonged to the lower divisions, but its rise to the Bundesliga was no accident. 
+              They practiced investments in forward scouting, data analysis, and academy building. Hoffenheim developed a model that could compete even with wealthier German clubs. 
+              It has not only improved player performance with technology but also made financially wise decisions.
+          </p>
+
+          <h2>AZ Alkmaar: The Dutch Innovators</h2>
+          <p>AZ Alkmaar might not have the global fame of Ajax or PSV, but they have found their niche by going data-based. 
+              By forming partnerships with analytics firms, AZ has maximised its recruitment, enhanced match preparation, and remained competitive in local and European leagues.
+          </p>
+
+          <h2>Arsenal: AI-Powered Transfers</h2>
+          <p>Arsenal is taking football analysis to a new level by using artificial intelligence as a transfer strategy. 
+              By analysing thousands of data points, the club ensures prospective signings will be integrated into their tactical framework and financial needs. 
+              This AI approach helps Arsenal make smarter, long-term purchases of players.
+          </p>
+
+          <h2>Manchester United: Using Data to Prevent Injuries</h2>
+          <p>Manchester United's team has been plagued with injuries in the last few seasons, and thus, the club designed an algorithm to forecast injury susceptibility in new players. 
+              With merely seven first-teamers remaining healthy throughout a full season, United now employs statistics to maximise availability on the field and optimise the overall performance of the team.</p>
+
+          <h2>The Future of Football Analytics</h2>
+          <p>Football analytics is no longer just about tracking stats, it's about maximising value. 
+              From player development and scouting to contract talks and injury prevention, data is revolutionising the sport. 
+              The biggest takeaway? Data doesn't just improve performance but profit.
+          </p>
+          <p>
+              For franchises looking for a competitive edge, analytics isn't just useful, it's indispensable. As technology continues to improve, football will become more data-driven in the coming years.
+          </p>
+
+          <blockquote className="highlight">"For clubs looking for a competitive edge, analytics isn't just useful – it's indispensable."</blockquote>
+
+          <div className="article-footer">
+              <h3>Sources:</h3>
+              <ul className="source-list">
+                  <li><a href="https://www.thescore.com" target="_blank" rel="noopener noreferrer">TheScore: Brighton Posts Record £122.8M Profit</a></li>
+                  <li><a href="https://www.thecuriouseconomist.com" target="_blank" rel="noopener noreferrer">The Curious Economist: How Premier League Clubs Make Profit</a></li>
+                  <li><a href="https://www.sportcal.com" target="_blank" rel="noopener noreferrer">Sportcal: Brighton Announces Record Profits</a></li>
+                  <li><a href="https://www.insideworldfootball.com" target="_blank" rel="noopener noreferrer">Inside World Football: Brighton's £122.8M Profit</a></li>
+                  <li><a href="https://www.theguardian.com" target="_blank" rel="noopener noreferrer">The Guardian: Mac Allister & Cucurella Sales Boost Brighton</a></li>
+                  <li><a href="https://www.offthepitch.com" target="_blank" rel="noopener noreferrer">Off The Pitch: Brighton Achieves Record English Club Profit</a></li>
+                  <li><a href="https://www.apnews.com" target="_blank" rel="noopener noreferrer">AP News: Brighton Posts Profit of $154M</a></li>
+                  <li><a href="https://www.transfermarkt.us" target="_blank" rel="noopener noreferrer">Transfermarkt: Benfica's €743M Transfer Profit in 10 Years</a></li>
+                  <li><a href="https://www.statsperform.com" target="_blank" rel="noopener noreferrer">Stats Perform: Brentford Uses Data and Analytics</a></li>
+                  <li><a href="https://www.economist.com" target="_blank" rel="noopener noreferrer">The Economist: How Data Helps Minor Clubs Compete</a></li>
+              </ul>
+          </div>
+        </div>
+      );
+    }
+    return <div>Blog post not found</div>;
+  };
+
+  return (
+    <div className="container">
+      {renderBlogContent()}
+    </div>
+  );
+};
+
+export default BlogPost;

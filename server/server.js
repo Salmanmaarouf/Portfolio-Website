@@ -8,35 +8,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// ✅ Serve static files from 'public' and root directory
-app.use(express.static(path.join(__dirname, "../public")));  
-app.use(express.static(path.join(__dirname, ".."))); 
+// ✅ Serve static files from React build directory
+app.use(express.static(path.join(__dirname, "../build")));
 
-// ✅ Serve specific HTML pages correctly
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../index.html"));
-});
-
-app.get("/about.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "../about.html"));
-});
-
-app.get("/contact.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "../contact.html"));
-});
-
-app.get("/projects.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "../projects.html"));
-});
-
-app.get("/blogs_and_commentaries.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "../blogs_and_commentaries.html"));
-});
-
-// ✅ Serve individual blog posts correctly
-app.get("/blogs/:blogName", (req, res) => {
-  res.sendFile(path.join(__dirname, `../blogs/${req.params.blogName}`));
-});
+// ✅ Serve images and other assets from public directory
+app.use('/images', express.static(path.join(__dirname, "../public/images")));
 
 // ✅ Contact form submission handler
 app.post("/send", async (req, res) => {
@@ -66,18 +42,9 @@ app.post("/send", async (req, res) => {
   }
 });
 
-// ✅ Serve static assets (JS, CSS, images) properly
-app.get("/script.js", (req, res) => {
-  res.sendFile(path.join(__dirname, "../script.js"));
-});
-
-app.get("/styles.css", (req, res) => {
-  res.sendFile(path.join(__dirname, "../styles.css"));
-});
-
-// ✅ Handle 404 Errors (if a file doesn't exist)
-app.use((req, res) => {
-  res.status(404).send("Page Not Found");
+// ✅ Handle React routing - serve index.html for all non-API routes
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
 // ✅ Start the server
