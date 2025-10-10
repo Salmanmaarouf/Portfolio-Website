@@ -27,3 +27,4 @@ export const useRippleEffect = () => {
     return () => document.removeEventListener('click', handleClick);
   }, []);
 };
+

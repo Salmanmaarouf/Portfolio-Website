@@ -1,26 +1,63 @@
+/* Import elegant fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
 /* Base styles and reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
-    background-color: #ffffff;
-    color: #333333;
-    line-height: 1.6;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8F5ED 50%, #EFEAE0 100%);
+    color: #4A4A4A;
+    line-height: 1.7;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Add subtle background pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(235, 184, 102, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(248, 245, 237, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* Main layout */
 .container {
     display: flex;
     min-height: 100vh;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
 }
 
 .left-column {
     width: 20%;
-    background-color: #ffffff;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8F5ED 100%);
+    position: relative;
+}
+
+.left-column::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(212, 175, 55, 0.2) 50%, transparent 100%);
 }
 
 .center-column {
@@ -28,25 +65,60 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 245, 237, 0.95) 100%);
+    position: relative;
+}
+
+.center-column::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
 }
 
 .right-column {
     width: 40%;
-    padding: 2rem;
+    padding: 3rem 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: -200px;
+    margin-left: -150px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 245, 237, 0.98) 100%);
+    position: relative;
+    z-index: 2;
 }
 
 /* Images */
 .main-image {
-    width: 80%; /* Adjust to make the image smaller */
-    max-width: 500px; /* Set a max size to prevent it from becoming too large */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Keeps image from stretching */
-    display: block; /* Prevents inline spacing issues */
-    margin-left: -300px;
+    width: 75%;
+    max-width: 450px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-left: -250px;
+    border-radius: 0px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 10px 20px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+    z-index: 3;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid rgba(212, 175, 55, 0.8);
+}
+
+.main-image:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.15),
+        0 15px 30px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .thumbnail {
@@ -59,22 +131,63 @@ body {
 
 /* Typography */
 h1 {
-    font-size: 1.5rem;
-    font-weight: normal;
-    font-style: italic;
-    margin-bottom: 2rem;
-    line-height: 1.4;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    line-height: 1.3;
+    color: #4A4A4A;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #D4AF37 0%, #EBB866 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #D4AF37 0%, #EBB866 100%);
+    border-radius: 0px;
 }
 
 h2 {
-    font-size: 1.2rem;
-    font-weight: normal;
-    font-style: italic;
-    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    color: #6F5B3E;
+    letter-spacing: -0.01em;
 }
 
 p {
-    margin-bottom: 1.5rem;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+    color: #7A7A7A;
+    text-align: justify;
+}
+
+.your-name {
+    background: linear-gradient(135deg, #D4AF37 0%, #EBB866 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.university {
+    background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
 }
 
 .sub-header {
@@ -89,20 +202,42 @@ p {
     margin-bottom: 2rem;
 }
 
-/* Keep your existing button styles */
+/* Elegant button styles */
 .nav-button, .back-button, .submit-button, .social-button {
     display: block;
-    padding: 0.8rem 1rem;
-    border: 1px solid #333;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(212, 175, 55, 0.3);
     text-align: center;
     text-decoration: none;
-    color: #333;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    position: relative; /* Needed for the ripple effect */
-    overflow: hidden; /* Ensures ripple doesn't go outside button */
-    transition: background-color 0.2s, color 0.2s, transform 0.05s;
-    background: none;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
+    border-radius: 0px;
+    background: linear-gradient(135deg, #EFEAE0 0%, #F8F5ED 100%);
+    color: #6F5B3E;
+    box-shadow: 
+        0 8px 25px rgba(212, 175, 55, 0.15),
+        0 4px 10px rgba(212, 175, 55, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.02em;
+}
+
+.nav-button::before, .back-button::before, .submit-button::before, .social-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.nav-button:hover::before, .back-button:hover::before, .submit-button:hover::before, .social-button:hover::before {
+    left: 100%;
 }
 
 .back-button {
@@ -110,16 +245,20 @@ p {
     margin-bottom: 2rem; /* Keeps spacing consistent */
 }
 
-/* Hover effect (Keep existing hover behavior) */
+/* Elegant hover effects */
 .nav-button:hover, .back-button:hover, .submit-button:hover, .social-button:hover {
-    background-color: #EBB866;
-    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 
+        0 18px 40px rgba(212, 175, 55, 0.4),
+        0 10px 20px rgba(212, 175, 55, 0.3);
+    background: linear-gradient(135deg, #EBB866 0%, #D4AF37 100%);
+    color: white;
 }
 
 /* Button click animation */
 .nav-button:active, .back-button:active, .submit-button:active, .social-button:active {
-    transform: scale(0.97); /* Slight shrink effect */
-    transition: transform 0.003s ease-in-out;
+    transform: translateY(0) scale(0.98);
+    transition: transform 0.1s ease-in-out;
 }
 
 /* Ripple effect */
@@ -145,54 +284,137 @@ p {
 
 /* Social links */
 .social-links {
-    display:flex;
-    gap: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
-.iconlinkedin {
-    width: 35px;
-    height: 35px;
+.social-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #D4AF37 0%, #EBB866 100%);
+    box-shadow: 
+        0 8px 25px rgba(212, 175, 55, 0.3),
+        0 4px 10px rgba(212, 175, 55, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
-.icongithub {
-    width: 25px;
-    height: 25px;
-    margin-bottom: -13px;
+
+.social-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.social-button:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.iconlinkedin, .icongithub {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    z-index: 2;
+    position: relative;
+}
+
+.social-button:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 
+        0 15px 35px rgba(212, 175, 55, 0.4),
+        0 8px 15px rgba(212, 175, 55, 0.3);
 }
 
 /* Contact form */
 form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 input, textarea {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
+    padding: 1rem 1.2rem;
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    border-radius: 0px;
     font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    color: #4A4A4A;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #D4AF37;
+    box-shadow: 
+        0 0 0 4px rgba(212, 175, 55, 0.2),
+        0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 textarea {
     min-height: 150px;
     resize: vertical;
+    font-family: 'Crimson Text', serif;
 }
 
 .submit-button {
     cursor: pointer;
     width: fit-content;
+    align-self: flex-start;
+    margin-top: 0.5rem;
 }
 
 /* Page header styling */
 .page-header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #4A4A4A;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
 }
 
 .underline {
-    width: 50px;
-    height: 2px;
-    background-color: #333;
-    margin-top: 0.5rem;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #D4AF37 0%, #EBB866 100%);
+    margin-top: 0.8rem;
+    border-radius: 0px;
+    position: relative;
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #D4AF37 0%, #EBB866 100%);
+    border-radius: 0px;
+    opacity: 0.2;
+    filter: blur(4px);
+    z-index: -1;
 }
 
 /* Responsive design */
@@ -242,11 +464,33 @@ textarea {
     animation-delay: 0.07s; /* Delay for a smoother look */
 }
 
-/* Drop animation */
+/* Elegant animations */
 @keyframes drop-in {
     from {
         opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(-30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(40px) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -254,103 +498,145 @@ textarea {
     }
 }
 
-/* Slide-in animation */
-@keyframes slide-in {
-    from {
-        opacity: 0;
-        transform: translateX(60px);
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
     }
-    to {
-        opacity: 1;
-        transform: translateX(0);
+    100% {
+        background-position: 200% 0;
     }
 }
 
-/*  Mobile Styles - Applying for screens smaller than 768px */
+/* Add shimmer effect to buttons */
+.nav-button, .back-button, .submit-button {
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Elegant Mobile Styles */
 @media (max-width: 768px) {
     
-    /* Stack everything vertically */
+    /* Stack everything vertically with elegant spacing */
     .container {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 10px;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 0px;
     }
 
     /* Make the center column full width */
     .center-column {
         width: 100%;
-        padding: 0;
+        padding: 2rem 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+        border-radius: 0px;
+        margin-bottom: 1rem;
     }
 
     /* Make the right column full width */
     .right-column {
         width: 100%;
         margin-left: 0;
-        padding: 1rem;
+        padding: 2rem 1.5rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%);
+        border-radius: 0px;
     }
 
-    /* Ensure images fit within the screen */
+    /* Ensure images fit within the screen with elegant styling */
     .main-image {
-        width: 90%;
-        max-width: 350px;
+        width: 85%;
+        max-width: 300px;
         height: auto;
         margin-left: 0;
+        border-radius: 0px;
+        box-shadow: 
+            0 15px 30px rgba(0, 0, 0, 0.1),
+            0 8px 15px rgba(0, 0, 0, 0.05);
     }
 
-    /* Adjust typography for readability */
+    /* Adjust typography for mobile elegance */
     h1 {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem;
     }
 
     h2 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     p {
         font-size: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        text-align: left;
     }
 
     /* Adjust navigation buttons */
     .navigation {
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.8rem;
+        margin-bottom: 2rem;
     }
 
     .nav-button, .back-button {
         width: 100%;
-        padding: 0.6rem;
+        max-width: 300px;
+        padding: 1rem;
         font-size: 1rem;
+        border-radius: 0px;
     }
 
     /* Adjust social icons */
     .social-links {
         justify-content: center;
+        gap: 1rem;
+    }
+
+    .social-button {
+        width: 45px;
+        height: 45px;
     }
 
     .iconlinkedin, .icongithub {
-        width: 30px;
-        height: 30px;
+        width: 22px;
+        height: 22px;
     }
 
     /* Contact form improvements */
     form {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
     }
 
     input, textarea {
         width: 100%;
         font-size: 1rem;
+        padding: 1rem;
+        border-radius: 0px;
     }
 
     /* Improve button touch areas */
     .submit-button {
         width: 100%;
-        padding: 0.8rem;
+        padding: 1rem;
+        border-radius: 0px;
+    }
+
+    /* Blog list mobile styling */
+    .blog-list li {
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .blog-list li a {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
 }
 
@@ -364,28 +650,32 @@ textarea {
     list-style: none;
 }
 
-/* Styling the text inside the button */
-/* 📝 Article Button Styling (Matches Back Button & Homepage Buttons) */
+/* Elegant blog list styling */
 .blog-list li {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 60px;  /* Matches other buttons */
-    background: white;
-    border: 2px solid gold;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 245, 237, 0.95) 100%);
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    border-radius: 0px;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Ensures ripple stays within the button */
-    transition: background 0.3s ease-in-out, transform 0.1s ease-in-out;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.2rem;
 }
 
 /* Styling the text inside the button */
 .blog-list li a {
     text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
-    font-weight: bold;
+    color: #4A4A4A;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
     display: block;
     width: 100%;
     height: 100%;
@@ -397,10 +687,11 @@ textarea {
     transition: color 0.3s ease-in-out;
 }
 
-/* 🔥 Hover Effect (Gold Background & White Text) */
+/* Hover Effect (Gold Background & White Text) */
 .blog-list li:hover {
-    background: gold;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #EBB866 0%, #D4AF37 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
 }
 
 .blog-list li:hover a {
@@ -426,3 +717,4 @@ textarea {
     transform: translate(-50%, -50%) scale(2);
     opacity: 1;
 }
+

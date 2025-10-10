@@ -1,28 +1,40 @@
-/* 📝 Minimalist Blog Styling */
+/* 📝 Elegant Blog Styling */
 .container {
-    background: #fff;
-    color: #222;
-    font-family: 'Times New Roman', serif;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8F5ED 50%, #EFEAE0 100%);
+    color: #4A4A4A;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     width: 100%;
+    min-height: 100vh;
 }
 
 .container .article {
-    width: 80%;
-    max-width: 800px;
-    padding: 2rem;
-    line-height: 1.6; /* Adjust to make it more readable */
-    word-spacing: 0px; /* Ensures consistent word spacing */
+    width: 85%;
+    max-width: 900px;
+    padding: 3rem 2.5rem;
+    line-height: 1.8;
+    word-spacing: 0px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        0 10px 20px rgba(0, 0, 0, 0.04);
+    margin: 2rem 0;
+    border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .article-title {
     text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: black;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4A4A4A;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
 }
 
 .article p {
@@ -38,18 +50,24 @@
 }
 
 .container h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: black;
-    margin-top: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #6F5B3E;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
 }
 
 .container p {
-    font-size: 1.2rem;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1rem;
     text-align: justify;
-    margin-bottom: 1.5rem;
-    word-spacing: normal;  /* Prevents excessive spaces between words */
-    white-space: normal;  /* Ensures text flows naturally */
+    margin-bottom: 1.8rem;
+    word-spacing: normal;
+    white-space: normal;
+    color: #4A4A4A;
+    line-height: 1.8;
 }
 
 ul.transfer-list {
@@ -97,13 +115,23 @@ blockquote.highlight {
 .back-button {
     display: inline-block;
     margin-bottom: 2rem;
-    font-size: 1.1rem;
-    color: gold;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #D4AF37;
     text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(235, 184, 102, 0.1) 100%);
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.3s ease;
 }
 
 .back-button:hover {
-    text-decoration: underline;
+    background: linear-gradient(135deg, #EBB866 0%, #D4AF37 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -117,3 +145,4 @@ blockquote.highlight {
         padding: 1rem;  /* Add more breathing room for smaller screens */
     }
 }
+
